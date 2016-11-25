@@ -32,14 +32,14 @@ def export_datasets(index, (header, train, test)):
 
     # write the train set
     with open('data/train_' + str(index) + '.dat', 'wb') as csvfile:
-        writer = csv.writer(csvfile, delimiter=' ')
+        writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(header)
         for row in train:
             writer.writerow(row)
 
     # write the test set
     with open('data/test_' + str(index) + '.dat', 'wb') as csvfile:
-        writer = csv.writer(csvfile, delimiter=' ')
+        writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(header)
         for row in test:
             writer.writerow(row)
