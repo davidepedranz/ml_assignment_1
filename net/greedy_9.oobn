@@ -1,0 +1,156 @@
+class greedy_9
+{
+    inputs = ();
+    outputs = ();
+    node_size = (80 40);
+    HR_Has_Constraints = "yes";
+    HR_DBN_Num_Slices = "5";
+    HR_Desc = "";
+    HR_OOBN_CheckConsistency = "1";
+    HR_OOBN_FitExpand = "1";
+    HR_Zoom_ZoomFactor = "100";
+    HR_Groups_GroupColors = "";
+    HR_Groups_GroupNames = "";
+    HR_Groups_UserGroupsNo = "0";
+    HR_Utility_Link = "63";
+    HR_Probabilistic_Link = "63";
+    HR_Functional_Link = "63";
+    HR_Binding_Link = "63";
+    HR_Information_Arc = "63";
+    HR_Color_Interface = "21";
+    HR_Color_Instance = "0";
+    HR_Color_DiscreteFunction = "5";
+    HR_Color_Function = "4";
+    HR_Color_Utility = "36";
+    HR_Color_Decision = "17";
+    HR_Color_ContinuousChance = "48";
+    HR_Color_DiscreteChance = "16";
+    HR_Monitor_InitSD = "2";
+    HR_Monitor_Utility_Arrange = "0";
+    HR_Monitor_Mean_Variance = "1";
+    HR_Monitor_Chance_Utility = "1";
+    HR_Monitor_InitStates = "5";
+    HR_Monitor_OpenGraph = "0";
+    HR_Monitor_GraphPrecision = "100";
+    HR_Monitor_AutoUpdGraph = "0";
+    HR_Compile_MaxMinimalSeparators = "100000";
+    HR_Compile_ApproxEpsilon = "1.0E-5";
+    HR_Compile_Approximate = "0";
+    HR_Compile_SaveToMemory = "0";
+    HR_Compile_Compress = "0";
+    HR_Compile_TriangMethod = "0";
+    HR_Propagate_AutoNormal = "1";
+    HR_Propagate_AutoSum = "1";
+    HR_Propagate_Auto = "1";
+    HR_Font_Italic = "0";
+    HR_Font_Weight = "400";
+    HR_Font_Size = "-12";
+    HR_Font_Name = "javax.swing.plaf.FontUIResource[family=Dialog,name=Dialog,style=bold,size=12]";
+    HR_Grid_GridShow = "0";
+    HR_Grid_GridSnap = "0";
+    HR_Grid_Y = "40";
+    HR_Grid_X = "40";
+
+    node NAP1L1
+    {
+	position = (162 49);
+	states = ("yes" "no");
+	HR_LinkGroup = "[AML:0][MDS1:0][ATP2B4:0][PCCB:0][MDK:0]";
+	HR_LinkMode = "[AML:0][MDS1:0][ATP2B4:0][PCCB:0][MDK:0]";
+    }
+
+    node ATP2B4
+    {
+	position = (323 351);
+	states = ("yes" "no");
+	HR_LinkGroup = "[PCCB:0][MDK:0][MDS1:0][AML:0]";
+	HR_LinkMode = "[PCCB:0][MDK:0][MDS1:0][AML:0]";
+    }
+
+    node PCCB
+    {
+	position = (330 272);
+	states = ("yes" "no");
+	HR_LinkGroup = "[ATP2B4:0][MDK:0][MDS1:0][AML:0]";
+	HR_LinkMode = "[ATP2B4:0][MDK:0][MDS1:0][AML:0]";
+    }
+
+    node MDK
+    {
+	position = (256 211);
+	states = ("no" "yes");
+	HR_LinkGroup = "[AML:0][PCCB:0][MDS1:0]";
+	HR_LinkMode = "[AML:0][PCCB:0][MDS1:0]";
+    }
+
+    node MDS1
+    {
+	position = (129 290);
+	states = ("yes" "no");
+	HR_LinkGroup = "[ATP2B4:0][AML:0]";
+	HR_LinkMode = "[ATP2B4:0][AML:0]";
+    }
+
+    node AML
+    {
+	position = (232 126);
+	states = ("no" "yes");
+	HR_LinkGroup = "[MDK:0][NAP1L1:0]";
+	HR_LinkMode = "[MDK:0][NAP1L1:0]";
+    }
+
+    potential (NAP1L1)
+    {
+	data = ( 0.178571 0.821429 );
+	experience = 56;
+    }
+
+    potential (ATP2B4 | PCCB)
+    {
+	data = (( 0.222222 0.777778 )	%  PCCB=yes
+		( 0 1 ));	%  PCCB=no
+	experience
+	     = ( 45	%  PCCB=yes
+		 11 );	%  PCCB=no
+    }
+
+    potential (PCCB | MDK)
+    {
+	data = (( 0.886364 0.113636 )	%  MDK=no
+		( 0.5 0.5 ));	%  MDK=yes
+	experience
+	     = ( 44	%  MDK=no
+		 12 );	%  MDK=yes
+    }
+
+    potential (MDK | AML)
+    {
+	data = (( 0.675676 0.324324 )	%  AML=no
+		( 1 0 ));	%  AML=yes
+	experience
+	     = ( 37	%  AML=no
+		 19 );	%  AML=yes
+    }
+
+    potential (MDS1 | NAP1L1 MDK)
+    {
+	data = ((( 0.428571 0.571429 )	%  NAP1L1=yes  MDK=no
+		 ( 1 0 ))	%  NAP1L1=yes  MDK=yes
+		(( 0.972973 0.027027 )	%  NAP1L1=no  MDK=no
+		 ( 0.555556 0.444444 )));	%  NAP1L1=no  MDK=yes
+	experience
+	     = (( 7	%  NAP1L1=yes  MDK=no
+		  3 )	%  NAP1L1=yes  MDK=yes
+		( 37	%  NAP1L1=no  MDK=no
+		  9 ));	%  NAP1L1=no  MDK=yes
+    }
+
+    potential (AML | NAP1L1)
+    {
+	data = (( 1 0 )	%  NAP1L1=yes
+		( 0.586957 0.413043 ));	%  NAP1L1=no
+	experience
+	     = ( 10	%  NAP1L1=yes
+		 46 );	%  NAP1L1=no
+    }
+} % class greedy_9

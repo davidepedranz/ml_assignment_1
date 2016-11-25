@@ -1,0 +1,242 @@
+
+Identifying skeleton:
+5 edges out of 15
+
+Identifying colliders:
+R0: ATP2B4 -> PCCB <- MDK
+R0: ATP2B4 -> PCCB <- AML
+R0: NAP1L1 -> AML <- MDS1
+
+PDAG has an admissible DAG extension.
+
+Identifying derived directions:
+
+Deciding automatically:
+
+Identifying colliders:
+
+Completing orientation:
+
+Identifying skeleton:
+5 edges out of 15
+
+Identifying colliders:
+R0: ATP2B4 -> PCCB <- MDK
+R0: ATP2B4 -> PCCB <- AML
+R0: NAP1L1 -> AML <- MDS1
+
+PDAG has an admissible DAG extension.
+
+Identifying derived directions:
+
+Manual decision: MDK - AML included
+
+Identifying colliders:
+R0: NAP1L1 -> AML <- MDK
+
+Identifying derived directions:
+
+Deciding automatically:
+
+Identifying colliders:
+
+Completing orientation:
+Fri Nov 25 14:40:23 2016
+
+
+Moral links:
+
+    Marrying MDK and NAP1L1
+    Marrying MDK and ATP2B4
+    Marrying MDS1 and MDK
+    Marrying MDS1 and NAP1L1
+    Marrying AML and ATP2B4
+
+
+Triangulating prime component with 4 members:
+    ATP2B4, PCCB, MDK, AML
+This component is a clique of cost 16
+
+Triangulating prime component with 4 members:
+    NAP1L1, MDK, MDS1, AML
+This component is a clique of cost 16
+
+
+Total cost of triangulation for all prime components is 32
+
+
+Elimination sequence:
+
+    PCCB
+    ATP2B4
+    MDS1
+    NAP1L1
+    AML
+    MDK
+
+
+Cliques:
+
+Clique 2, 4 members, table size = 16:
+    MDK, AML, NAP1L1, MDS1
+
+Clique 1, 4 members, table size = 16:
+    MDK, AML, ATP2B4, PCCB
+
+Total clique table size: 32
+
+
+The junction forest:
+
+Creating junction tree with clique 2 as root ...
+
+Cliques 1 and 2 linked, separator has 2 members and table size = 4:
+    MDK, AML
+
+
+Assignment of potentials to cliques:
+
+    Node NAP1L1 assigned to clique 2
+    Node ATP2B4 assigned to clique 1
+    Node PCCB assigned to clique 1
+    Node MDK assigned to clique 2
+    Node MDS1 assigned to clique 2
+    Node AML assigned to clique 2
+
+
+Checking conditional probability potentials:
+
+    No errors found
+
+
+Beliefs for chance nodes:
+
+    NAP1L1:
+	no         0,5
+	yes        0,5
+
+    ATP2B4:
+	no         0,5
+	yes        0,5
+
+    PCCB:
+	no         0,5
+	yes        0,5
+
+    MDK:
+	no         0,5
+	yes        0,5
+
+    MDS1:
+	yes        0,5
+	no         0,5
+
+    AML:
+	no         0,5
+	yes        0,5
+
+
+EM learning with 56 cases:
+
+    Log-likelihood for iteration 1: -232,897
+    Log-likelihood for iteration 2: -145,478
+    Log-likelihood for iteration 3: -145,478
+
+EM learning - final results:
+
+    Log-likelihood: -145,478
+    AIC: -165,478
+    BIC: -185,732
+Fri Nov 25 14:40:35 2016
+
+
+Moral links:
+
+    Marrying MDK and NAP1L1
+    Marrying MDK and ATP2B4
+    Marrying MDS1 and MDK
+    Marrying MDS1 and NAP1L1
+    Marrying AML and ATP2B4
+
+
+Triangulating prime component with 4 members:
+    ATP2B4, PCCB, MDK, AML
+This component is a clique of cost 16
+
+Triangulating prime component with 4 members:
+    NAP1L1, MDK, MDS1, AML
+This component is a clique of cost 16
+
+
+Total cost of triangulation for all prime components is 32
+
+
+Elimination sequence:
+
+    PCCB
+    ATP2B4
+    MDS1
+    NAP1L1
+    AML
+    MDK
+
+
+Cliques:
+
+Clique 2, 4 members, table size = 16:
+    MDK, AML, NAP1L1, MDS1
+
+Clique 1, 4 members, table size = 16:
+    MDK, AML, ATP2B4, PCCB
+
+Total clique table size: 32
+
+
+The junction forest:
+
+Creating junction tree with clique 2 as root ...
+
+Cliques 1 and 2 linked, separator has 2 members and table size = 4:
+    MDK, AML
+
+
+Assignment of potentials to cliques:
+
+    Node NAP1L1 assigned to clique 2
+    Node ATP2B4 assigned to clique 1
+    Node PCCB assigned to clique 1
+    Node MDK assigned to clique 2
+    Node MDS1 assigned to clique 2
+    Node AML assigned to clique 2
+
+
+Checking conditional probability potentials:
+
+    No errors found
+
+
+Beliefs for chance nodes:
+
+    NAP1L1:
+	no         0,821429
+	yes        0,178571
+
+    ATP2B4:
+	no         0,875
+	yes        0,125
+
+    PCCB:
+	no         0,271548
+	yes        0,728452
+
+    MDK:
+	no         0,803571
+	yes        0,196429
+
+    MDS1:
+	yes        0,803571
+	no         0,196429
+
+    AML:
+	no         0,637742
+	yes        0,362258

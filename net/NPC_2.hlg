@@ -1,0 +1,261 @@
+
+Identifying skeleton:
+3 edges out of 15
+
+Identifying colliders:
+R0: NAP1L1 -> AML <- MDK
+
+PDAG has an admissible DAG extension.
+
+Identifying derived directions:
+
+Deciding automatically:
+
+Identifying colliders:
+
+Completing orientation:
+ATP2B4 -> PCCB
+
+Identifying skeleton:
+3 edges out of 15
+
+Identifying colliders:
+R0: NAP1L1 -> AML <- MDK
+
+PDAG has an admissible DAG extension.
+
+Identifying derived directions:
+
+Manual decision: ATP2B4 - AML included
+
+Identifying colliders:
+R0: PCCB -> ATP2B4 <- AML
+
+Identifying derived directions:
+
+Identifying skeleton:
+3 edges out of 15
+
+Identifying colliders:
+R0: NAP1L1 -> AML <- MDK
+
+PDAG has an admissible DAG extension.
+
+Identifying derived directions:
+
+Manual decision: MDS1 - AML included
+
+Identifying colliders:
+R0: MDK -> AML <- MDS1
+
+Identifying derived directions:
+
+Manual decision: ATP2B4 - MDS1 included
+
+Identifying colliders:
+R0: PCCB -> ATP2B4 <- MDS1
+
+Identifying derived directions:
+
+Deciding automatically:
+
+Identifying colliders:
+
+Completing orientation:
+Fri Nov 25 14:18:56 2016
+
+
+Moral links:
+
+    Marrying MDK and NAP1L1
+    Marrying MDS1 and PCCB
+    Marrying MDS1 and MDK
+    Marrying MDS1 and NAP1L1
+
+
+Triangulating prime component with 3 members:
+    ATP2B4, PCCB, MDS1
+This component is a clique of cost 8
+
+Triangulating prime component with 4 members:
+    NAP1L1, MDK, MDS1, AML
+This component is a clique of cost 16
+
+
+Total cost of triangulation for all prime components is 24
+
+
+Elimination sequence:
+
+    AML
+    MDK
+    NAP1L1
+    PCCB
+    ATP2B4
+    MDS1
+
+
+Cliques:
+
+Clique 2, 3 members, table size = 8:
+    MDS1, ATP2B4, PCCB
+
+Clique 1, 4 members, table size = 16:
+    MDS1, NAP1L1, MDK, AML
+
+Total clique table size: 24
+
+
+The junction forest:
+
+Creating junction tree with clique 2 as root ...
+
+Cliques 1 and 2 linked, separator has 1 member and table size = 2:
+    MDS1
+
+
+Assignment of potentials to cliques:
+
+    Node NAP1L1 assigned to clique 1
+    Node ATP2B4 assigned to clique 2
+    Node PCCB assigned to clique 2
+    Node MDK assigned to clique 1
+    Node MDS1 assigned to clique 2
+    Node AML assigned to clique 1
+
+
+Checking conditional probability potentials:
+
+    No errors found
+
+
+Beliefs for chance nodes:
+
+    NAP1L1:
+	yes        0,5
+	no         0,5
+
+    ATP2B4:
+	no         0,5
+	yes        0,5
+
+    PCCB:
+	yes        0,5
+	no         0,5
+
+    MDK:
+	yes        0,5
+	no         0,5
+
+    MDS1:
+	yes        0,5
+	no         0,5
+
+    AML:
+	no         0,5
+	yes        0,5
+
+
+EM learning with 56 cases:
+
+    Log-likelihood for iteration 1: -232,897
+    Log-likelihood for iteration 2: -150,972
+    Log-likelihood for iteration 3: -150,972
+
+EM learning - final results:
+
+    Log-likelihood: -150,972
+    AIC: -166,972
+    BIC: -183,174
+Fri Nov 25 14:19:07 2016
+
+
+Moral links:
+
+    Marrying MDK and NAP1L1
+    Marrying MDS1 and MDK
+    Marrying MDS1 and NAP1L1
+    Marrying MDS1 and PCCB
+
+
+Triangulating prime component with 3 members:
+    ATP2B4, PCCB, MDS1
+This component is a clique of cost 8
+
+Triangulating prime component with 4 members:
+    NAP1L1, MDK, MDS1, AML
+This component is a clique of cost 16
+
+
+Total cost of triangulation for all prime components is 24
+
+
+Elimination sequence:
+
+    AML
+    MDK
+    NAP1L1
+    PCCB
+    ATP2B4
+    MDS1
+
+
+Cliques:
+
+Clique 2, 3 members, table size = 8:
+    MDS1, ATP2B4, PCCB
+
+Clique 1, 4 members, table size = 16:
+    MDS1, NAP1L1, MDK, AML
+
+Total clique table size: 24
+
+
+The junction forest:
+
+Creating junction tree with clique 2 as root ...
+
+Cliques 1 and 2 linked, separator has 1 member and table size = 2:
+    MDS1
+
+
+Assignment of potentials to cliques:
+
+    Node NAP1L1 assigned to clique 1
+    Node ATP2B4 assigned to clique 2
+    Node PCCB assigned to clique 2
+    Node MDK assigned to clique 1
+    Node MDS1 assigned to clique 2
+    Node AML assigned to clique 1
+
+
+Checking conditional probability potentials:
+
+    No errors found
+
+
+Beliefs for chance nodes:
+
+    NAP1L1:
+	yes        0,196429
+	no         0,803571
+
+    ATP2B4:
+	no         0,787609
+	yes        0,212391
+
+    PCCB:
+	yes        0,839286
+	no         0,160714
+
+    MDK:
+	yes        0,196429
+	no         0,803571
+
+    MDS1:
+	yes        0,857143
+	no         0,142857
+
+    AML:
+	no         0,671667
+	yes        0,328333

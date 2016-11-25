@@ -46,7 +46,7 @@ def export_datasets(index, (header, train, test)):
 
 def main():
     dataset = load_data()
-    for i in range(1, 6):
+    for i in range(6, 10):
         export_datasets(i, split_data(dataset))
 
 # entry point
