@@ -1,0 +1,16 @@
+algorithm,set,yy,yn,ny,nn
+NPC,1,2,0,3,10
+NPC,2,5,0,3,7
+NPC,3,5,0,3,6
+NPC,4,6,1,4,3
+NPC,5,5,1,5,3
+greedy,1,2,0,3,10
+greedy,2,5,0,4,6
+greedy,3,5,0,2,7
+greedy,4,6,1,4,3
+greedy,5,5,1,5,3
+naive,1,2,0,6,7
+naive,2,5,0,5,5
+naive,3,5,0,2,7
+naive,4,6,1,2,5
+naive,5,5,1,5,3
