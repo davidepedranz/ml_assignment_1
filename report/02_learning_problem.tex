@@ -1,0 +1,14 @@
+\section{Learning problem}
+\label{sec:learning-problem}
+
+We want to understand the relationships of 6 given genes: \texttt{ATP2B4}, \texttt{NAP1L1}, \texttt{MDK}, \texttt{PCCB}, \texttt{MDS1}, \texttt{AML}.
+Each gene can be active or inactive and can influence the status of the others.
+We are interested in predicting the probability of gene \texttt{AML} to be active, given the status of the others.
+
+First, we will learn a Bayesian network using one of the algorithms described in \cref{sec:introduction}.
+Then, we will use the build in \ac{EM} algorithm to learn the model's parameters.
+Finally, we will evaluate the network's performances on predicting gene \texttt{AML}.
+
+We are given dataset that contains \num{72} complete examples of the \num{6} genes.
+We will use \num{80}\% of them for the training and the remaining \num{20}\% for the test.
+Given the small number of examples, we will use the k-fold cross validation technique (explained in \cref{sec:cross-validation}) to get more reliable results.

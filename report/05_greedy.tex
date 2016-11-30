@@ -1,0 +1,32 @@
+\section{Greedy search-and-score}
+\label{sec:greedy}
+
+The greedy search-and-score algorithm performs a search through the space of possible networks.
+It evaluates the goodness of each network using a score function and returns the ``best'' one found.
+Network candidates are constructed by adding an arc, removing an arc or reversing an arc to the currently best scoring graph.
+
+As for NPC, we use \ac{EM} to learn the parameters of the learned network, setting all experiences to \num{1} to avoid null probabilities. \cref{tab:greedy} summarises the performances of the \num{5} networks learned using greedy search-and-score.
+
+\begin{table}
+	\centering
+	\caption{Greedy search-and-score network's performances}
+	\label{tab:greedy}
+	\begin{tabular}{ccccc}
+    	\toprule
+    	    \multicolumn{1}{c}{k} &
+    		\multicolumn{1}{c}{accuracy} &
+    		\multicolumn{1}{c}{recall} &
+    		\multicolumn{1}{c}{precision} &
+    		\multicolumn{1}{c}{f1} \\
+    	\midrule
+    		1   & 0.80 & 1.00 & 0.40 & 0.57 \\
+    		2   & 0.73 & 1.00 & 0.56 & 0.71 \\
+    		3   & 0.86 & 1.00 & 0.71 & 0.83 \\
+    		4   & 0.64 & 0.86 & 0.60 & 0.71 \\
+    		5   & 0.57 & 0.83 & 0.50 & 0.63 \\[2pt]
+    		\hline
+    		avg & 0.72 & 0.92 & 0.56 & 0.70 \Tstrut\Bstrut\\
+    	\bottomrule    
+	\end{tabular}
+\end{table}
+

@@ -1,0 +1,35 @@
+\section{NPC}
+\label{sec:npc}
+
+The NPC algorithm tries to construct the network exploiting the conditional independence in the samples.
+It perform some statistical test for conditional independence for each pair of random variables.
+An undirected edge is added between each pair of variables which are not statistically independent, then the conflicts (eg. cycles) are resolved using some heuristic or the user input.
+Note that the algorithm is not able to decide the direction of causal relationships, since this is proven to be impossible.
+
+The algorithm is executed with the default settings.
+During the parameters learning with the \ac{EM} algorithm, the experience is set to once ``active'' and once ``inactive'' for all genes, even if they are never observed active or never observed inactive.
+This forces the algorithm to never assign zeros probabilities to random variables, which would create problem to the inference process.
+\cref{tab:npc} summarises the performances of the \num{5} networks learned using NPC.
+
+\begin{table}
+	\centering
+	\caption{NPC network's performances}
+	\label{tab:npc}
+	\begin{tabular}{ccccc}
+    	\toprule
+    	    \multicolumn{1}{c}{k} &
+    		\multicolumn{1}{c}{accuracy} &
+    		\multicolumn{1}{c}{recall} &
+    		\multicolumn{1}{c}{precision} &
+    		\multicolumn{1}{c}{f1} \\
+    	\midrule
+    		1   & 0.80 & 1.00 & 0.40 & 0.57 \\
+    		2   & 0.80 & 1.00 & 0.63 & 0.77 \\
+    		3   & 0.79 & 1.00 & 0.63 & 0.77 \\
+    		4   & 0.64 & 0.86 & 0.60 & 0.71 \\
+    		5   & 0.57 & 0.83 & 0.50 & 0.63 \\[2pt]
+    		\hline
+    		avg & 0.72 & 0.92 & 0.56 & 0.70 \Tstrut\Bstrut\\
+    	\bottomrule    
+	\end{tabular}
+\end{table}

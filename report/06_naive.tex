@@ -1,0 +1,77 @@
+\section{Fixed Naive Bayes structure}
+\label{sec:naive}
+
+Naive Bayes networks assume a simplified structure for the dependencies between random variables.
+
+Let's denote with $Y$ the random variables we are interested in and with $y_i$ its possible values.
+We call $x = \langle a_1, ..., a_m \rangle$ the conjunction of the other random variables in the network.
+Then, the decision rule used in normal Bayesian networks is:
+
+\begin{equation*}
+    y^{*} = \argmax_{y_i \in Y} P(y_i | x)
+          = \argmax_{y_i \in Y} P(a_1, ..., a_m | y_i) P(y_i)
+\end{equation*}
+
+The first term $P(a_1, ..., a_m | y_i)$ is quite complex and require the knowledge of the joint probability distribution of all random variables in the network.
+Naive Bayes classifiers make the simplifying assumption that all random variables $a_i$ are independent on each other given the class. Formally:
+
+\begin{equation*}
+     P(a_1, ..., a_m | y_i) = \prod_{j=1}^{m} P(a_j | y_i)
+\end{equation*}
+
+The decision rule of a Naive Bayes classifier can thus be simplified to:
+
+\begin{equation}
+    y^{*} = \argmax_{y_i \in Y} \prod_{j=1}^{m} P(a_j | y_i)
+    \label{eq:naive-bayes}
+\end{equation}
+
+To make \cref{eq:naive-bayes} easy to compute, the network for a Naive Bayes classifier is made of the random variable to predict as the root node and all other random variables as leaves, connected only to the root.
+Since we are interested in predicting \texttt{AML}, the network can be represented as:
+
+\vspace{2mm}
+
+\begin{center}
+    \begin{tikzpicture}[
+      node distance=0.6cm and 1.5cm,
+      mynode/.style={draw,ellipse,text width=1.2cm,align=center}
+    ]
+        \node[mynode] (y) {AML};
+        \node[mynode, below=of y] (a3) {MDK};
+        \node[mynode, below left=of y] (a1) {ATP2B4};
+        \node[mynode, below right=of a1, right of=a3] (a2) {PCCB};
+        \node[mynode, below right=of y] (a5) {MDS1};
+        \node[mynode, below left=of a5, left of=a3] (a4) {NAP1L1};
+        \path (y) edge[-latex] (a1)
+              (y) edge[-latex] (a2)
+              (y) edge[-latex] (a3)
+              (y) edge[-latex] (a4)
+              (y) edge[-latex] (a5);
+    \end{tikzpicture}
+\end{center}
+
+
+\begin{table}
+	\centering
+	\caption{Naive Bayes network's performances}
+	\label{tab:naive}
+	\begin{tabular}{ccccc}
+    	\toprule
+    	    \multicolumn{1}{c}{k} &
+    		\multicolumn{1}{c}{accuracy} &
+    		\multicolumn{1}{c}{recall} &
+    		\multicolumn{1}{c}{precision} &
+    		\multicolumn{1}{c}{f1} \\
+    	\midrule
+    		1   & 0.93 & 1.00 & 0.67 & 0.80 \\
+    		2   & 0.80 & 1.00 & 0.63 & 0.77 \\
+    		3   & 0.86 & 1.00 & 0.71 & 0.83 \\
+    		4   & 0.79 & 0.86 & 0.75 & 0.80 \\
+    		5   & 0.71 & 0.83 & 0.63 & 0.71 \\[2pt]
+    		\hline
+    		avg & 0.82 & 0.92 & 0.68 & 0.78 \Tstrut\Bstrut\\
+    	\bottomrule    
+	\end{tabular}
+\end{table}
+
+The network's parameters are trained using the \ac{EM} algorithm, using the same trick of putting some expirience on all possible configurations as described in section \cref{sec:npc} for NPC. \cref{tab:naive} summarises the performances of the Naive Bayes network.

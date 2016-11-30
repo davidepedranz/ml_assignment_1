@@ -1,0 +1,21 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Bayesian networks are graphical statistical models that represent the joint probability distribution and conditional dependencies of a set of random variables via a \ac{DAG}.
+They help to visualize the structure of the model in an intuitive way and allow all kinds of probabilistic inference on it.
+
+A typical application of the Bayesian modelling is for diagnosis: given some clinical tests (observations), we want to estimate the probability of having some diseases (causes).
+In general, Bayesian networks can be used for any kind probabilistic inference.
+Common tasks are computing conditional independence between groups of random variables and computing the probability of a certain configuration given a set of observations.
+
+Bayesian networks are usually build with the help of a domain expert, who knows some of the causality and independence relationships between the random variables, as well as some rough conditional probabilities of a random variables given its possible causes (the parents in the \ac{DAG}).
+
+Given a network, there are algorithms to learn the model parameters from training data, or, if all parameters are given, tune them to better fit the data.
+There are also algorithms to learn the structure of the network.
+In this assignment, we focus on learning the structure of the network using different algorithms and comparing their performances on a given learning problem.
+In particular, we use the \texttt{HUGIN Lite}\footnote{Available at: \url{http://www.hugin.com/index.php/hugin-lite/}} software to learn the structure of the network using two different algorithms:
+\begin{itemize}
+    \item NPC
+    \item Greedy search-and-score
+\end{itemize}
+Moreover, we compare the results with a Naive Bayes structure.

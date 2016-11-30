@@ -1,0 +1,16 @@
+\section{Results}
+\label{sec:results}
+
+NPC and greedy search-and-score algorithm showed very similar performances, with an average accuracy of $72\%$.
+In both cases, recall is much higher than precision.
+This means that the network tends to classify negative examples as positive.
+On the other hand, it manages to correctly identify almost all positive examples.
+
+The Naive Bayes network performed significantly better than both the networks learned with NPC and greedy search-and-score algorithms, reaching an average accuracy of $82\%$.
+Also, the network results to be simpler than the learned one.
+
+There are two main possible explanation for this results.
+The first possibility is that most of the genes are independent of each other with regards to \texttt{AML}.
+In this setting, the independence assumption of the Naive Bayes approach is a good approximation of the reality, so the Naive network generalizes well on real data.
+The second possibility is that the training dataset was too small to learn a good structure.
+The learned structures models the noise of the sample data and do not generalize properly.

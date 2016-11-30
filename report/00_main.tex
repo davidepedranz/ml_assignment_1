@@ -1,0 +1,81 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{silence}\WarningsOff[latexfont]
+
+\usepackage{amsmath}
+
+\RequirePackage{tikz}[2010/10/13]
+\usetikzlibrary{arrows,automata,calc,intersections,patterns,decorations.pathmorphing,decorations.pathreplacing}
+
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage[binary-units,per-mode=symbol]{siunitx}
+\sisetup{list-final-separator = {, and }}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{microtype}
+\usepackage{textcomp}
+\usepackage[american]{babel}
+\usepackage[noabbrev,capitalise]{cleveref}
+\usepackage{xspace}
+\usepackage{hyphenat}
+\usepackage[draft,inline,nomargin,index]{fixme}
+\fxsetup{theme=color}
+\usepackage{grffile}
+\usepackage{xfrac}
+\usepackage{multirow}
+\RequirePackage{xstring}
+\RequirePackage{xparse}
+\RequirePackage[index=true]{acro}
+
+\NewDocumentCommand\acrodef{mO{#1}mG{}}{\DeclareAcronym{#1}{short={#2}, long={#3}, #4}}
+\NewDocumentCommand\acused{m}{\acuse{#1}}
+
+\usepackage{upquote}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes,arrows}
+
+\acrodef{DAG}{directed acyclic graph}
+\acrodef{EM}{expectation–maximization}
+\DeclareMathOperator*{\argmax}{arg\!\max}
+
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+
+
+\begin{document}
+
+\title{Assignment 1 - Bayesian Networks}
+\author{
+	\IEEEauthorblockN{Davide Pedranz, Mat. number 189295}
+	\texttt{davide.pedranz@studenti.unitn.it}
+}
+
+\maketitle
+
+\begin{abstract}
+Bayesian networks are powerful graphical probabilistic models widely used if various fields.
+In this assignment, we compare some of the available algorithms to learn the structure of a Bayesian network from a dataset of samples.
+\end{abstract}
+
+\acresetall
+
+% various sections
+\input{01_introduction}
+\input{02_learning_problem}
+\input{03_cross_validation}
+\input{04_NPC}
+\input{05_greedy}
+\input{06_naive}
+\input{07_results}
+\input{08_conclusions}
+
+% \bibliographystyle{IEEEtran}
+% \bibliography{references}
+
+\end{document}

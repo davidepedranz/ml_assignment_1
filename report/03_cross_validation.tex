@@ -1,0 +1,20 @@
+\section{k-fold cross validation}
+\label{sec:cross-validation}
+
+A typical approach to evaluate the performances of a supervised learning algorithm is to test its prediction of on some labeled test data.
+To do that, the examples are divided in two parts: a training set, used to train the learner, and a validation test, used to evaluate its performances.
+The learner never sees the test set before, so the results tells how good the learner will generalize on future data.
+
+A common setting is to use $70 - 80\%$ of the data for the training and the remaining $20 - 30\%$ for the test.
+This works fine as long as the available dataset is big enough, but the learner has problems if the dataset is small, since this further reduces the number of available examples.
+In fact, the learner tends not to generalize properly if trained with insufficient examples.
+
+k-fold cross validation is a technique that tries to reduce this problem.
+The dataset is randomly partitioned in k equal sized sets.
+Instead of just one, k different learners are trained, each time taking as training set the union of all partitions except the k\textsuperscript{th} one.
+The k\textsuperscript{th} partition is used to test the performances of the k\textsuperscript{th} learner.
+To obtain the final prediction, the average of the predictions of the k learners is taken.
+
+In this case, we choose $k = 5$, so that we always train the learners on the $80\%$ of the dataset.
+The generation of the k subsets is implemented using the \texttt{scikit-learn}\footnote{\url{http://scikit-learn.org/}} library.
+The performances are evaluated on each of the \num{5} trained learners and averaged together for each of the \num{3} algorithms.
